@@ -1,129 +1,35 @@
 <html>
 <head>
-<title>Le Paradis de MrFrieza</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-<script src="//releases.flowplayer.org/7.0.4/flowplayer.min.js"></script>
-<script src="//releases.flowplayer.org/hlsjs/flowplayer.hlsjs.min.js"></script>
-  
-<script language="JavaScript" Type="text/javascript">
-<!--
-function popupMsg(theMsg) {
-alert(theMsg);
-}
-//-->
-</script>
-  
-  <script>
-var isNS = (navigator.appName == "Chrome") ? 1 : 0;
-if(navigator.appName == "Chrome") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
-function mischandler(){
-return false;
-}
-function mousehandler(e){
-var myevent = (isNS) ? e : event;
-var eventbutton = (isNS) ? myevent.which : myevent.button;
-if((eventbutton==2)||(eventbutton==3)) return false;
-}
-document.oncontextmenu = mischandler;
-document.onmousedown = mousehandler;
-document.onmouseup = mousehandler;
-</script>
-
+<script src="//releases.flowplayer.org/7.2.4/flowplayer.min.js"></script>
+<script src="//releases.flowplayer.org/hlsjs/flowplayer.hlsjs.light.min.js"></script>
 <style>
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 35px;
-    height: 0;
-    overflow: hidden;
+.flowplayer {
+  background-color: #ccc;
 }
-.video-container iframe {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 80%;
-    height: 70%;
-}
-	</style>
-  
+</style>
 </head>
-
+		
 <body>
-  <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">MrFrieza</a>
-    </div>
-    <ul class="nav navbar-nav navbar-left">
-      <li class="active"><a href="https://mrfrieza.github.io/live/">Live</a></li>
-      <li><a type="button" onclick="load('http://82.234.91.118:1234/hls/')" value="Ma chaine"> Ma chaine </a></li>
-<li><a type="button" onclick="load('//ok.ru/videoembed/412346031626?autoplay=1')" value="Fuji TV"> Fuji TV </a></li>
-<li><a type="button" onclick="load('//ok.ru/videoembed/412357893642?autoplay=1')" value="Nippon TV"> Nippon TV </a></li>
-<li><a type="button" onclick="load('//ok.ru/videoembed/412338560522?autoplay=1')" value="NHK"> NHK </a></li>
-<li><a type="button" onclick="load('//ok.ru/videoembed/412313132554?autoplay=1')" value="Tokyo MX"> Tokyo MX </a></li>
-<li><a type="button" onclick="load('//ok.ru/videoembed/412360580618?autoplay=1')" value="Tv Asahi"> Tv Asahi </a></li>
-<li><a type="button" onclick="load('//ok.ru/videoembed/412362939914?autoplay=1')" value="Tv Tokyo"> Tv Tokyo </a></li>
-<li><a type="button" onclick="load('//ok.ru/videoembed/412353764874?autoplay=1')" value="TBS"> TBS </a></li>
-<li><a type="button" onclick="load('https://streamlabs.com/mrfrieza')" value="Faire un Don"> Faire un Don </a></li>
-    </ul>
-     <ul class="nav navbar-nav navbar-right">
-      <li><script type="text/javascript" src="//livecounter.theyosh.nl/2987.js"></script></li>
-    </ul>
-  </div>
-  </nav>
-	
-
-
-
 <script>
-function load(page) {
-  document.getElementById("my_iframe").src = page;
-}
+window.onload = function () {
+
+  flowplayer("#player", {
+    ratio: 9/16,
+    splash: true,
+    clip: {
+      sources: [
+        { type: "application/x-mpegurl",
+          src: "http://82.234.91.118:1234/hls/" }
+    }
+
+  }).on("load", function (e, api) {
+    api.fullscreen();
+
+  });
+
+};
 </script>
+	
+<div id="player"></div>
 
-
-<div class="video-container">
-<iframe id="my_iframe" frameborder="0" autoplay="1" allowfullscreen=allowfullscreen></iframe>
 </body>
-	
-	
-	
-    
-  <div class="container" id="player" align="left" style="display: none">
-  <script>
-    var player = new Clappr.Player({
-      source: "",
-      width:960,
-      height:540,
-      autoPlay: true,
-      parentId: "#player"})
-    ;
-  </script></div>
-  
-  <div class="container" id="chat" align="right">
-    <script id="cid0020000175025499726" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 225px;height: 560px;">{"handle":"mrfrieza","arch":"js","styles":{"a":"606060","b":100,"c":"FFFFFF","d":"FFFFFF","k":"606060","l":"606060","m":"606060","n":"FFFFFF","p":"10","q":"606060","r":100,"pos":"br","cv":1,"cvfntw":"lighter","cvbg":"606060","cvw":75,"cvh":30}}</script>
-  </div>
-	
-	<script type="text/javascript">
-    function hello(){
-	alert('Le contenu est bloqué par défaut par le navigateur. Veuillez charger le contenu via une icone présente dans votre barre URL. Sur Chrome, cliquez sur le bouclier puis chargez le contenu. Sur Opéra, cliquez sur Contenu bloqué puis chargez le contenu. Merci et bon visionnage ! ');
-}
-$(function(){
-	$('div[onload]').trigger('onload');
-});
-  </script>
-	
-	<div style="display: none" onload="$(this).text('()');"></div>
-<div style="display: none" onload="hello()"></div>
-	
-	
-    
-  
-</body>
-
-</html>
