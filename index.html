@@ -1,35 +1,46 @@
 <html>
 <head>
-<script src="//releases.flowplayer.org/7.2.4/flowplayer.min.js"></script>
-<script src="//releases.flowplayer.org/hlsjs/flowplayer.hlsjs.light.min.js"></script>
-<style>
-.flowplayer {
-  background-color: #ccc;
-}
-</style>
 </head>
 		
 <body>
-<script>
-window.onload = function () {
-
-  flowplayer("#player", {
-    ratio: 9/16,
-    splash: true,
-    clip: {
-      sources: [
-        { type: "application/x-mpegurl",
-          src: "" }
-    }
-
-  }).on("load", function (e, api) {
-    api.fullscreen();
-
-  });
-
-};
-</script>
 	
-<div id="player"></div>
+<script type="text/javascript" src="http://p.jwpcdn.com/6/11/jwplayer.js"></script>
+<script type="text/javascript">// <![CDATA[
+jwplayer.key="3v69OhAmXcWm/EYoj45h1tUY4qVtlQXZ1Z7hsA==";";
+// ]]></script>
+	
+<div id="mediaplayer_wrapper">Loading the player...</div>
+	
+<script type="text/javascript">// <![CDATA[
+var playerInstance = jwplayer("mediaplayer_wrapper")
+                    playerInstance.setup({
+    playlist: [ 
+{
+        image: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg',
+	title: 'Test',
+        file: 'http://82.234.91.118:1234/hls/',},
+],
+cast:{},  
+width: '100%',
+    height: '100%',
+    aspectratio: '16:9',
+    primary: 'flash',
+	abouttext: "",
+    aboutlink: "",
+    title: "",
+   name: "bekle",
+       active: "red",
+       inactive: "white",
+       background: "black"   ,
 
+        ga: '{}',
+	sharing: {link: ""},	  
+	autostart: "true",
+        loop: "true",
+    });
+
+// ]]></script>
+	
 </body>
+</html>
+
