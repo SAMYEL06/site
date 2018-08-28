@@ -3,43 +3,38 @@
 </head>
 		
 <body>
-	
-<script type="text/javascript" src="http://p.jwpcdn.com/6/11/jwplayer.js"></script>
-<script type="text/javascript">
-jwplayer.key="3v69OhAmXcWm/EYoj45h1tUY4qVtlQXZ1Z7hsA==";
+
+<table>
+<tr>
+<td><input type="button" onclick="load('//widestream.io/embedFlow.php?live=20647')" value="Ma chaine"> </input></td>
+<td><input type="button" onclick="load('//ok.ru/videoembed/549364899567?viewers=true&autoplay=true')" value="Fuji TV"> </input></td>
+<td><input type="button" onclick="load('//ok.ru/videoembed/549378465519?viewers=true&autoplay=true')" value="Nippon TV"> </input></td>
+<td><input type="button" onclick="load('//ok.ru/videoembed/549360967407?viewers=true&autoplay=true')" value="NHK"> </input></td>
+<td><input type="button" onclick="load('//ok.ru/videoembed/549356314351?viewers=true&autoplay=true')" value="Tokyo MX"> </input></td>
+<td><input type="button" onclick="load('//ok.ru/videoembed/549380366063?viewers=true&autoplay=true')" value="Tv Asahi"> </input></td>
+<td><input type="button" onclick="load('//ok.ru/videoembed/549382987503?viewers=true&autoplay=true')" value="Tv Tokyo"> </input></td>
+<td><input type="button" onclick="load('//ok.ru/videoembed/549369683695?viewers=true&autoplay=true')" value="TBS"> </input></td>
+<td><input type="button" onclick="load('https://streamlabs.com/mrfrieza')" value="Faire un Don"> </input></td>
+</tr>
+</table>
+
+
+<script>
+function load(page) {
+  document.getElementById("tv").src = page;
+}
 </script>
-	
-<div id="mediaplayer_wrapper">Loading the player...</div>
-	
-<script type="text/javascript">// <![CDATA[
-var playerInstance = jwplayer("mediaplayer_wrapper")
-                    playerInstance.setup({
-    playlist: [ 
-{
-        image: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg',
-	title: 'Test',
-        file: '',},
-],
-cast:{},  
-width: '80%',
-    height: '80%',
-    aspectratio: '16:9',
-    primary: 'flash',
-	abouttext: "",
-    aboutlink: "",
-    title: "",
-   name: "bekle",
-       active: "red",
-       inactive: "white",
-       background: "black"   ,
 
-        ga: '{}',
-	sharing: {link: ""},	  
-	autostart: "true",
-        loop: "true",
-    });
+<div>
+<iframe align="left" id="tv" frameborder="0" allowfullscreen=allowfullscreen></iframe>
+<iframe align="right" id="chat" src="https://www.twitch.tv/mrfrieza/chat?popout=" frameborder="0" scrolling="yes"></iframe>
+</div>
 
-// ]]></script>
+</body>
+
+
+
+[/su_accordion]
 	
 </body>
 </html>
